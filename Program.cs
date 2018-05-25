@@ -19,6 +19,7 @@ namespace sacantrell_site
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("http://*:80", "http://localhost:5000")
                 .UseStartup<Startup>()
                 .Build();
     }
