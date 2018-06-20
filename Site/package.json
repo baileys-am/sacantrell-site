@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "devDependencies": {
+    "@aspnet/signalr": "^1.0.0",
     "@types/history": "4.6.0",
     "@types/react": "15.0.35",
     "@types/react-dom": "15.5.1",
@@ -25,11 +26,13 @@
     "react-dom": "15.6.1",
     "react-hot-loader": "3.0.0-beta.7",
     "react-router-dom": "4.1.1",
-    "signalr": "^2.2.3",
     "style-loader": "0.18.2",
     "typescript": "2.4.1",
     "url-loader": "0.5.9",
     "webpack": "2.5.1",
     "webpack-hot-middleware": "2.18.2"
+  },
+  "dependencies": {
+    "tslib": "^1.9.2"
   }
 }
