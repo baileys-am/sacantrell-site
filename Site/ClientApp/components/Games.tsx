@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-import { NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Chat } from './Chat';
-import { ChatClient } from '../js/ChatClient'
+import { ChatClient } from '../js/ChatClient';
+import '../css/games.css';
+import { Blackjack } from './Blackjack';
 
 export class Games extends React.Component<{}, {}> {
     private _chatClient: ChatClient;
@@ -16,16 +18,25 @@ export class Games extends React.Component<{}, {}> {
     }
 
     public render(): JSX.Element {
-        return  <div>
-                    <ul>
-                        <li>
-                            <NavLink to={ '/games/blackjack' } exact activeClassName='active'>
-                                Blackjack
-                            </NavLink>
-                        </li>
-                    </ul>
-                    <hr />
-                    <Chat username={this._username} client={this._chatClient}/>
-                </div>;
+        return  <Router>
+                    <div>
+                        <ul>
+                            <li>
+                                <Link to="/games/blackjack">Blackjack</Link>
+                            </li>
+                        </ul>
+
+                        <hr/>
+
+                        <div>
+                            <div className="game">
+                                <Route path="/games/blackjack" component={ Blackjack }/>
+                            </div>
+                            <div className="game-chat">
+                                <Chat username={this._username} client={this._chatClient}/>
+                            </div>
+                        </div>
+                    </div>
+                </Router>;
     }
 }

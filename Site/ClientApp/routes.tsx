@@ -9,6 +9,5 @@ import { About } from './components/About';
 export const routes = <Layout>
     <Route exact path='/' component={ Home } />
     <Route path='/games' render={() => <Games/> } />
-    <Route path='/games/blackjack' component={ Blackjack } />
     <Route path='/about' component={ About } />
 </Layout>;
