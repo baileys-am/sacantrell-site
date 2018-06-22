@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using sacantrell_site.Blackjack;
 
 namespace sacantrell_site
 {
@@ -22,6 +23,11 @@ namespace sacantrell_site
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add dependencies
+            services.AddTransient<IBlackjack, BlackjackHub>();
+
+            services.AddSignalR();
+
             services.AddMvc();
         }
 
@@ -43,6 +49,11 @@ namespace sacantrell_site
             }
 
             app.UseStaticFiles();
+
+            app.UseSignalR(routes => {
+                routes.MapHub<ChatHub>("/games/chat");
+                routes.MapHub<BlackjackHub>("/games/blackjack");
+            });
 
             app.UseMvc(routes =>
             {

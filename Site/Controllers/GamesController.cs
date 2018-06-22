@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace sacantrell_site.Controllers
 {
-    public class ProjectsController : Controller
+    public class GamesController : Controller
     {
         public IActionResult Index()
         {
