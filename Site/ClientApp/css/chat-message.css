@@ -1,0 +1,64 @@
+body {
+    color: #000000; 
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.incoming-message-username {
+    font-size: 12px;
+}
+
+.incoming-message {
+    position: relative;
+    width: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-right: 75px;
+
+    word-wrap: break-word;
+    border: solid lightblue;
+    border-radius: 5px;
+    background: lightblue;
+}
+  
+.incoming-message:before {
+    position: absolute;
+    right: 100%;
+    top: 5px;
+    width: 0;
+    height: 0;
+
+    border-top: 13px solid transparent;
+    border-right: 26px solid lightblue;
+    border-bottom: 13px solid transparent;
+    
+    content:"";
+}
+
+.outgoing-message {
+    position: relative;
+    width: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 75px;
+    margin-right: 35px;
+
+    word-wrap: break-word;
+    border: solid transparent;
+    border-radius: 5px;
+    background: lightgreen;
+}
+  
+.outgoing-message:after {
+    position: absolute;
+    left: 100%;
+    top: 5px;
+    width: 0;
+    height: 0;
+
+    border-top: 13px solid transparent;
+    border-left: 26px solid lightgreen;
+    border-bottom: 13px solid transparent;
+    
+    content:"";
+}
