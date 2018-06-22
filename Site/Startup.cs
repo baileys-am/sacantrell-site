@@ -51,8 +51,8 @@ namespace sacantrell_site
             app.UseStaticFiles();
 
             app.UseSignalR(routes => {
-                routes.MapHub<ChatHub>("/projects/chat");
-                routes.MapHub<BlackjackHub>("/projects/blackjack");
+                routes.MapHub<ChatHub>("/games/chat");
+                routes.MapHub<BlackjackHub>("/games/blackjack");
             });
 
             app.UseMvc(routes =>
