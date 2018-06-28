@@ -6,11 +6,11 @@ import { ChatClient } from '../js/ChatClient';
 import '../css/games.css';
 import { Blackjack } from './Blackjack';
 
-export class Games extends React.Component<{}, {}> {
+export class Games extends React.Component<RouteComponentProps<{}>, {}> {
     private _chatClient: ChatClient;
     private _username: string = '';
 
-    public constructor(props: RouteComponentProps<{}>) {
+    public constructor(props: RouteComponentProps<{}>, {}) {
         super(props);
         const name = window.prompt('Enter a user name:', 'Steven');
         this._username = name == null ? 'unknown' : name.toString();
@@ -22,7 +22,7 @@ export class Games extends React.Component<{}, {}> {
                     <div>
                         <ul>
                             <li>
-                                <Link to="/games/blackjack">Blackjack</Link>
+                                <Link to="/games/blackjack">Blacskjack</Link>
                             </li>
                         </ul>
 
