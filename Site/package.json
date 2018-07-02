@@ -1,8 +1,14 @@
 {
-  "name": "sacantrell_site",
-  "private": true,
-  "version": "0.0.0",
-  "devDependencies": {
+  "name": "sacantrell.site",
+  "version": "1.0.0",
+  "description": "Personal site",
+  "main": "main.js",
+  "scripts": {
+    "clean": "rm -r node_modules"
+  },
+  "author": "Steven Cantrell",
+  "devDependencies": {},
+  "dependencies": {
     "@aspnet/signalr": "^1.0.0",
     "@types/history": "4.6.0",
     "@types/react": "15.0.35",
@@ -10,6 +16,8 @@
     "@types/react-hot-loader": "3.0.3",
     "@types/react-router": "4.0.12",
     "@types/react-router-dom": "4.0.5",
+    "@types/tapable": "^0.2.5",
+    "@types/webpack": "^3.0.0",
     "@types/webpack-env": "1.13.0",
     "aspnet-webpack": "^2.0.3",
     "aspnet-webpack-react": "^3.0.0",
@@ -27,12 +35,10 @@
     "react-hot-loader": "3.0.0-beta.7",
     "react-router-dom": "4.1.1",
     "style-loader": "0.18.2",
+    "tslib": "^1.9.2",
     "typescript": "2.4.1",
     "url-loader": "0.5.9",
     "webpack": "2.5.1",
     "webpack-hot-middleware": "2.18.2"
-  },
-  "dependencies": {
-    "tslib": "^1.9.2"
   }
 }

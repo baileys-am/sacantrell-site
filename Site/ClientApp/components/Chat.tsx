@@ -89,8 +89,10 @@ export class Chat extends React.Component<{username: string, client: ChatClient}
     }
 
     private scrollMessagesToBottom(): void {
-        var node = ReactDOM.findDOMNode<HTMLDivElement>(this.refs.messageList);
-        node.scrollTop = node.scrollHeight;
+        var node = ReactDOM.findDOMNode(this.refs.messageList) as Element;
+        if (node) {
+            node.scrollTop = node.scrollHeight;
+        }
     }
 
     private connectClient(): void {
