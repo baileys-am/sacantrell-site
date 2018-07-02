@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Personal site",
   "main": "main.js",
-  "scripts": {},
+  "scripts": {
+    "clean": "rm -r node_modules"
+  },
   "author": "Steven Cantrell",
   "devDependencies": {},
   "dependencies": {
