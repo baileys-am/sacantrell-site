@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using sacantrell_site.Blackjack;
+using Sacantrell.Site.Blackjack;
 
-namespace sacantrell_site
+namespace Sacantrell.Site
 {
     public class Startup
     {

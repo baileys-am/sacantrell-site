@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
-namespace sacantrell_site.Blackjack
+namespace Sacantrell.Site.Blackjack
 {
     public class BlackjackHub : Hub, IBlackjack
     {

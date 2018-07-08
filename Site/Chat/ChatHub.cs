@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
-namespace sacantrell_site.Blackjack
+namespace Sacantrell.Site.Blackjack
 {
     public class ChatHub : Hub
     {

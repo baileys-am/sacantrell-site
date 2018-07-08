@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using sacantrell_site.Blackjack;
+using Sacantrell.Site.Blackjack;
 
-namespace sacantrell_site.Controllers
+namespace Sacantrell.Site.Controllers
 {
     [Route("api/[controller]")]
     public class BlackjackController : Controller

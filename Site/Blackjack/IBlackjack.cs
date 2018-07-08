@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace sacantrell_site.Blackjack
+namespace Sacantrell.Site.Blackjack
 {
     public interface IBlackjack
     {
