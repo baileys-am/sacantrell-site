@@ -22,7 +22,7 @@ export class Games extends React.Component<RouteComponentProps<{}>, {}> {
                     <div>
                         <ul>
                             <li>
-                                <Link to="/games/blackjack">Blacskjack</Link>
+                                <Link to="/games/blackjack">Blackjack</Link>
                             </li>
                         </ul>
 
