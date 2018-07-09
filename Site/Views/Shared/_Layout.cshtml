@@ -2,6 +2,25 @@
 <html>
 <head>
     <style>
+        .layout-body {
+            margin: auto;
+            padding-top: 48px;
+            padding-bottom: 48px;
+            padding-left: 112px;
+            padding-right: 112px;
+            background-color: rgba(148, 153, 152, 0.582);
+        }
+
+        .layout-page {
+            margin: auto;
+            padding: 10px;
+            color: black;
+            background-color: rgb(226, 245, 244);
+            -webkit-box-shadow: 0 0 4px 1px rgb(39, 37, 37);
+            -moz-box-shadow: 0 0 4px 1px rgb(39, 37, 37);
+            box-shadow: 0 0 4px 1px rgb(39, 37, 37);
+        }
+
         .layout-link-banner {
             text-align: center;
         }
@@ -12,8 +31,6 @@
             width: 60%;
             overflow: hidden;
             list-style-type: none;
-            border: 3px solid #73AD21;
-            background-color: #333333;
         }
 
         .layout-link {
@@ -24,30 +41,35 @@
 
         .layout-link a {
             display: block;
-            color: white;
             text-align: center;
             padding: 16px;
             text-decoration: none;
+            color: black;
         }
 
         .layout-hr {
-            border-top: 1px solid #ccc;
+            border-top: 1px solid black;
             margin-left: 10%;
             margin-right: 10%;
         }
     </style>
 </head>
-<body>
-    <div class="layout-link-banner">
-        <ul class="layout-link-list">
-        <li class="layout-link"><a href="Home">Home</a></li>
-        <li class="layout-link"><a href="Games">Games</a></li>
-        <li class="layout-link"><a href="About">About</a></li>
-    </ul>
-    </div>
-    <hr class="layout-hr" />
-    <div>
-        @RenderBody()
+
+<body class="layout-body">
+    <div class="layout-page">
+        <div class="layout-link-banner">
+            <ul class="layout-link-list">
+                <li class="layout-link"><a href="Home">Home</a></li>
+                <li class="layout-link"><a href="Games">Games</a></li>
+                <li class="layout-link"><a href="About">About</a></li>
+            </ul>
+        </div>
+
+        <hr class="layout-hr" />
+
+        <div>
+            @RenderBody()
+        </div>
     </div>
 </body>
 </html>
