@@ -8,7 +8,9 @@ module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
     return [{
         stats: { modules: false },
-        entry: { 'main': './ClientApp/boot.tsx' },
+        entry: {
+            'gamesApp': './Apps/Games/boot.tsx'
+        },
         resolve: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
         output: {
             path: path.join(__dirname, bundleOutputDir),
@@ -17,7 +19,7 @@ module.exports = (env) => {
         },
         module: {
             rules: [
-                { test: /\.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
+                { test: /\.tsx?$/, include: /./, use: 'awesome-typescript-loader?silent=true' },
                 { test: /\.css$/, use: isDevBuild ? ['style-loader', 'css-loader'] : ExtractTextPlugin.extract({ use: 'css-loader?minimize' }) },
                 { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]

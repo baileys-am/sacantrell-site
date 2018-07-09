@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    </style>
+
+    <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/dist/site.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
