@@ -4,9 +4,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Chat } from './Chat';
 import { ChatClient } from '../js/ChatClient';
 import '../css/games.css';
-import { Blackjack } from './Blackjack';
 
-export class Games extends React.Component<RouteComponentProps<{}>, {}> {
+export class Games extends React.Component<{}, {}> {
     private _chatClient: ChatClient;
     private _username: string = '';
 
@@ -30,7 +29,7 @@ export class Games extends React.Component<RouteComponentProps<{}>, {}> {
 
                         <div>
                             <div className="game">
-                                <Route path="/games/blackjack" component={ Blackjack }/>
+                                <Route path="/games/blackjack" />
                             </div>
                             <div className="game-chat">
                                 <Chat username={this._username} client={this._chatClient}/>

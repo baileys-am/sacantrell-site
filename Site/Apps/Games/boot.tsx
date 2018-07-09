@@ -1,11 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import { Games } from './components/Games'
 
 function renderApp(): void {
     ReactDOM.render(
         <AppContainer>
-            <h1>Coming soon...</h1>
+            <Games />
         </AppContainer>,
         document.getElementById('gamesApp')
     );
