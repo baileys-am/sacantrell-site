@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
-namespace Sacantrell.Site.Blackjack
+namespace Sacantrell.Site.Hubs
 {
     public class ChatMessage
     {
