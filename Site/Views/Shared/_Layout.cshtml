@@ -2,61 +2,87 @@
 <html>
 <head>
     <style>
-        html {
+        .layout-body {
+        }
+
+        .layout-page {
+        }
+
+        .layout-page header {
+            padding-bottom: 60px;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .my-photo {
+            float: left;
+            align-self: flex-start;
+        }
+
+        .my-photo img {
+            border-radius: 50%;
+        }
+
+        .nav {
             width: 100%;
-            height: 100%;
-            background-color: rgba(148, 153, 152, 0.582);
-        }
-
-        .page {
-            height: 100%;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            margin-left: 220px;
-            margin-right: 220px;
-            padding: 18px;
-            height: 100%;
-            color: black;
-            background-color: rgb(226, 245, 244);
-            -webkit-box-shadow: 0 0 4px 1px rgb(39, 37, 37);
-            -moz-box-shadow: 0 0 4px 1px rgb(39, 37, 37);
-            box-shadow: 0 0 4px 1px rgb(39, 37, 37);
-        }
-
-        .layout-nav {
+            align-self: flex-end;
             text-align: center;
         }
 
-        .layout-nav-links {
-            margin: auto;
-            padding: 0;
-            width: 60%;
-            overflow: hidden;
+        .nav ul {
+            width: 100%;
+            min-width: 400px;
+            display: table;
             list-style-type: none;
         }
 
-        .layout-nav-link {
-            margin: auto;
-            width: 100px;
-            display: inline-block;
+        .nav ul li {
+            display: table-cell;
         }
 
-        .layout-nav-link a {
-            display: block;
+        .nav ul li a {
+            line-height: 0;
             text-align: center;
-            padding: 16px;
-            text-decoration: none;
+            font-size: 1.6rem;
             color: black;
         }
 
-        .layout-nav-link a:hover {
+        .nav ul li a:hover {
+            color: grey;
+            text-decoration:none;
+        }
+
+        .nav hr {
+            width: 90%;
+            margin-top: 0px;
+            margin-bottom: 25px;
             color: grey;
         }
 
-        .layout-hr {
-            border-top: 1px solid black;
-            margin-left: 10%;
-            margin-right: 10%;
+        .ext-links {
+            margin-top: 1rem;
+            margin-right: 1rem;
+        }
+
+        .ext-links ul {
+            display: table;
+            list-style-type: none;
+        }
+
+        .ext-links ul li {
+            display: table-cell;
+        }
+
+        .ext-links ul li a {
+            padding: 8px;
+            text-align: center;
+            color: black;
+        }
+
+        .ext-links ul li a:hover {
+            color: grey;
+            text-decoration:none;
         }
     </style>
 
@@ -66,25 +92,37 @@
     <environment exclude="Development">
         <link rel="stylesheet" href="~/dist/vender.min.css" asp-append-version="true" />
     </environment>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="page">
-    <div>
-        <div class="layout-nav">
-            <ul class="layout-nav-links">
-                <li class="layout-nav-link"><a href="Home">Home</a></li>
-                <li class="layout-nav-link"><a href="Games">Games</a></li>
-                <li class="layout-nav-link"><a href="About">About</a></li>
-            </ul>
-        </div>
-
-        <hr class="layout-hr" />
-
+<body class="layout-body">
+    <div class="layout-page">
+        <header>
+            <div class="my-photo">
+                <img src="/images/my-photo.jpg" alt="Steven Cantrell"></img>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="Home">Home</a></li>
+                    <li><a href="Games">Games</a></li>
+                    <li><a href="About">About</a></li>
+                </ul>
+                <hr />
+            </div>
+            <div class="ext-links">
+                <ul>
+                    <li><a class="fa fa-github fa-2x" href="https://github.com/baileys-am"></a></li>
+                    <li><a class="fa fa-linkedin fa-2x" href="https://www.linkedin.com/in/steven-cantrell/"></a></li>
+                </ul>
+            </div>
+        </header>
         <div>
-            @RenderBody()
+            <div>
+                @RenderBody()
+            </div>
         </div>
     </div>
-
     <environment include="Development">
         <script src="~/dist/vendor.js" asp-append-version="true"></script>
     </environment>
