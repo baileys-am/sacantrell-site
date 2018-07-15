@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace sacantrell_site.Controllers
+namespace Sacantrell.Site.Controllers
 {
     public class GamesController : Controller
     {
