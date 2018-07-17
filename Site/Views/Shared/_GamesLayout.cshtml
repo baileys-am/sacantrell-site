@@ -2,6 +2,50 @@
 <html>
 <head>
     <style>
+        .game-layout {
+        }
+
+        .game-layout header {
+            padding: 8px;
+            background-color: rgb(54, 54, 54);
+        }
+
+        .game-layout header a {
+            color: whitesmoke;
+        }
+
+        .game-layout header a:hover {
+            color: grey;
+            text-decoration: none;
+        }
+
+        .game-layout header a span {
+            margin-left: 6px;
+            font-size: 20px;
+        }
+
+        .game-layout header a span:hover {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        .game-layout footer {
+            width: 100%;
+            height: 25px;
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+            background-color: rgb(54, 54, 54);
+        }
+
+        .game-layout footer span {
+            margin: 5px;
+            font-size: 12px;
+            color: whitesmoke;
+        }
+
+        .game-content {
+        }
     </style>
 
     <environment include="Development">
@@ -19,8 +63,21 @@
         <script src="~/dist/vendor.min.js",asp-append-version="true"></script>
     </environment>
 
-    <div>
-        @RenderBody()
+    <div class="game-layout">
+        <header>
+            <a href="http://www.sacantrell.net">
+                <span class="fa fa-undo"></span>
+                <span>sacantrell.net</span>
+            </a>
+        </header>
+
+        <div class="game-content">
+            @RenderBody()
+        </div>
+
+        <footer>
+            <span>© Steven Cantrell</span>
+        </footer>
     </div>
 </body>
 </html>
