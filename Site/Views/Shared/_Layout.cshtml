@@ -64,7 +64,7 @@
 
         .nav ul li a:hover {
             color: grey;
-            text-decoration:none;
+            text-decoration: none;
         }
 
         .nav hr {
@@ -94,7 +94,10 @@
 
         .ext-links ul li a:hover {
             color: grey;
-            text-decoration:none;
+            text-decoration: none;
+        }
+
+        .layout-content {
         }
     </style>
 
@@ -129,10 +132,8 @@
                 </ul>
             </div>
         </header>
-        <div>
-            <div>
-                @RenderBody()
-            </div>
+        <div class="layout-content">
+            @RenderBody()
         </div>
     </div>
     <environment include="Development">
