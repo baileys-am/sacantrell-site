@@ -1,5 +1,5 @@
 import * as signalr from '@aspnet/signalr';
-import { ChatMessage } from '../../Games/components/ChatMessage';
+import { ChatMessage } from './ChatMessage';
 
 export abstract class ChatClient {
     protected readonly _username: string;

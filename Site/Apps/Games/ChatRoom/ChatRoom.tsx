@@ -1,15 +1,15 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ChatMessage } from './ChatMessage';
-import { ChatClient } from '../js/ChatClient';
-import '../css/chat.css'
+import { ChatClient } from './ChatClient';
+import './chat-room.css'
 
-export class Chat extends React.Component<{username: string, client: ChatClient}, {text: string, messages: Array<ChatMessage>}> {
+export class ChatRoom extends React.Component<{username: string, client: ChatClient}, {text: string, messages: Array<ChatMessage>}> {
     private readonly _username: string;
     private readonly _client: ChatClient;
 
     public constructor(props: {username: string, client: ChatClient}) {
-        super(props);4
+        super(props);
         this._username = props.username;
         this._client = props.client;
 
@@ -37,7 +37,7 @@ export class Chat extends React.Component<{username: string, client: ChatClient}
             message.render()
         );
 
-        return  <div className="chat">
+        return  <div className="chat-room">
                     <div ref="messageList" className="chat-box">
                         <ul ref="messages" className="message-list">{messages}</ul>
                     </div>

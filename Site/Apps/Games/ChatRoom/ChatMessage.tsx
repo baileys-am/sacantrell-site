@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../css/chat-message.css'
+import './chat-message.css'
 
 export abstract class ChatMessage extends React.Component<{sender: string, message: string}, {sender: string, message: string}>  {
     public constructor(props: {sender: string, message: string}) {
