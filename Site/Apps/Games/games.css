@@ -1,0 +1,22 @@
+.app-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: pink;
+}
+
+.app-nav {
+    float: left;
+    align-self: flex-start;
+    background-color: red;
+    font-size: 100px;
+}
+
+.app-chat {
+    width: 100%;
+    height: 100%;
+    align-self: flex-end;
+    background-color: blue;
+}
