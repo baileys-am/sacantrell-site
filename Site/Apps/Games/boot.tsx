@@ -7,16 +7,19 @@ import { ChatRoom } from './ChatRoom/ChatRoom';
 import './games.css'
 
 function renderApp(): void {
-    var chatClient = ChatClient.createSignalRClient('games/chat', 'Steven');
-
     ReactDOM.render(
         <AppContainer>
             <div className="app-container">
-                <div className="app-nav">
-                    <NavBar />
+                <div className="app-container-top">
+                    <div className="app-nav">
+                        insert nav here
+                    </div>
+                    <div className="app-game">
+                        insert game here
+                    </div>
                 </div>
                 <div className="app-chat">
-                    <ChatRoom  username="Steven" client={chatClient}/>
+                    insert chat here
                 </div>
             </div>
         </AppContainer>,
