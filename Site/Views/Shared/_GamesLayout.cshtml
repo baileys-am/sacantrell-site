@@ -2,49 +2,72 @@
 <html>
 <head>
     <style>
+#header, #footer { overflow: hidden; background: #444; height: 100px; }
+#header { top: 0; }
+#content { top: 100px; bottom: 100px; overflow: auto; background: #CCC; }
+#footer { bottom: 0; }​
+
         .game-layout {
+            width: 100%;
+            height: 100%;
         }
 
-        .game-layout header {
-            padding: 8px;
+        .game-layout > header {
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 4px;
             background-color: rgb(54, 54, 54);
         }
 
-        .game-layout header a {
+        .game-layout > header a {
             color: whitesmoke;
         }
 
-        .game-layout header a:hover {
+        .game-layout > header a:hover {
             color: grey;
             text-decoration: none;
         }
 
-        .game-layout header a span {
+        .game-layout > header a span {
             margin-left: 6px;
             font-size: 20px;
         }
 
-        .game-layout header a span:hover {
+        .game-layout > header a span:hover {
             color: inherit;
             text-decoration: inherit;
         }
 
-        .game-layout footer {
+        .game-content {
+            width: 100%;
+            top: 35px;
+            bottom: 25px;
+            left: 0;
+            position: absolute;
+            overflow: auto;
+            border: 1px solid black;
+            background-color: green;
+        }
+
+
+        .game-layout > footer {
             width: 100%;
             height: 25px;
-            position: fixed;
+            overflow: hidden;
+            left: 0;
             bottom: 0;
+            position: absolute;
             text-align: center;
             background-color: rgb(54, 54, 54);
         }
 
-        .game-layout footer span {
+        .game-layout > footer span {
             margin: 5px;
             font-size: 12px;
             color: whitesmoke;
-        }
-
-        .game-content {
         }
     </style>
 
@@ -71,13 +94,13 @@
             </a>
         </header>
 
-        <footer>
-            <span>© Steven Cantrell</span>
-        </footer>
-
         <div class="game-content">
             @RenderBody()
         </div>
+
+        <footer>
+            <span>© Steven Cantrell</span>
+        </footer>
     </div>
 </body>
 </html>
