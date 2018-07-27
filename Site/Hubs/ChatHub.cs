@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
@@ -9,9 +10,14 @@ namespace Sacantrell.Site.Hubs
     {
         private static ConcurrentDictionary<string, string> _users = new ConcurrentDictionary<string, string>();
 
+        public async Task<ICollection<string>> GetUsernames()
+        {
+            return await Task.Run(() => _users.Values);
+        }
+
         public async Task Join(string username) {
             _users[this.Context.ConnectionId] = username;
-            await this.Clients.Others.SendAsync("userJoined", username);
+            await this.Clients.All.SendAsync("userJoined", username);
         }
 
         public async Task SendMessage(string message)
