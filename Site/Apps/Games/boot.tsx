@@ -19,7 +19,7 @@ function renderApp(): void {
                     </div>
                     <div className="app-game">
                         <i className="fa fa-gear fa-spin fa-4x"></i>
-                        <div>Game Contetn - Work In Progress</div>
+                        <div>Game Content - Work In Progress</div>
                     </div>
                 </div>
                 <div className="app-chat">
