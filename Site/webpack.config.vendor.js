@@ -3,8 +3,8 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = (env) => {
-    const extractCSS = new ExtractTextPlugin('vendor.css');
     const isDevBuild = !(env && env.prod);
+    const extractCSS = isDevBuild ? new ExtractTextPlugin('vendor.css') : new ExtractTextPlugin('vendor.min.css');
     return [{
         stats: { modules: false },
         resolve: {
@@ -22,7 +22,7 @@ module.exports = (env) => {
         output: {
             path: path.join(__dirname, 'wwwroot', 'dist'),
             publicPath: 'dist/',
-            filename: '[name].js',
+            filename: isDevBuild ? '[name].js' : '[name].min.js',
             library: '[name]_[hash]',
         },
         plugins: [
@@ -36,7 +36,8 @@ module.exports = (env) => {
                 'process.env.NODE_ENV': isDevBuild ? '"development"' : '"production"'
             })
         ].concat(isDevBuild ? [] : [
-            new webpack.optimize.UglifyJsPlugin()
+            new webpack.optimize.UglifyJsPlugin(),
+            extractCSS
         ])
     }];
 };
