@@ -4,6 +4,7 @@ pipeline {
         stage('site') {
             steps {
                 echo 'Building site'
+                sh 'npm install'
                 sh 'dotnet restore'
                 sh 'dotnet publish --configuration Release'
             }
