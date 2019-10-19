@@ -31,8 +31,9 @@
 
     <!-- In development, the dist files won't exist on the first run or when cloning to
          a different machine, so rebuild them if not already present. -->
-    <Message Importance="high" Text="Performing Webpack build..." />
     <RemoveDir Directories="wwwroot/dist" ContinueOnError="true" />
+    <Exec Command="npm install" />
+    <Message Importance="high" Text="Performing Webpack build..." />
     <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js" />
     <Exec Command="node node_modules/webpack/bin/webpack.js" />
   </Target>
@@ -41,6 +42,7 @@
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
     <RemoveDir Directories="wwwroot/dist" ContinueOnError="true" />
     <Exec Command="npm install" />
+    <Message Importance="high" Text="Performing Webpack build..." />
     <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
     <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
 
