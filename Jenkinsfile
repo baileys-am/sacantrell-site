@@ -8,7 +8,7 @@ pipeline {
                 sh 'dotnet publish --configuration Release'
             }
         }
-        state('deploy') {
+        stage('deploy') {
             steps {
                 echo 'Deploying site'
                 sh 'rm -r /www/'
