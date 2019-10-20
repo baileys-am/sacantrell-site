@@ -10,12 +10,12 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                if (BRANCH_NAME='master')
-                {
-                    echo 'Deploying site'
-                    sh 'rm -r /www/'
-                    sh 'cp -r ./Site/bin/Release/netcoreapp2.1/publish/* /www/'
+                when {
+                    branch 'master'
                 }
+                echo 'Deploying site'
+                sh 'rm -r /www/'
+                sh 'cp -r ./Site/bin/Release/netcoreapp2.1/publish/* /www/'
             }
         }
     }
