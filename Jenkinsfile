@@ -14,9 +14,7 @@ pipeline {
             }
             steps {
                 echo 'Deploying site'
-                sh 'sudo mkdir -p /www && sudo rm -r /www && sudo mkdir /www'
-                sh 'cp -r ./Site/bin/Release/netcoreapp2.1/publish/* /www/'
-                sh 'sudo systemctl start kestrel-sacantrell-site.service'
+                sh 'deploy_sacantrell_site.sh Site/bin/Release/netcoreapp2.1/publish/.'
             }
         }
     }
