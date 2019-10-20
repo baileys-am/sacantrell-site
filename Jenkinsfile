@@ -10,9 +10,12 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                echo 'Deploying site'
-                sh 'rm -r /www/'
-                sh 'cp -r ./Site/bin/Release/netcoreapp2.1/publish/* /www/'
+                if (BRANCH_NAME='master')
+                {
+                    echo 'Deploying site'
+                    sh 'rm -r /www/'
+                    sh 'cp -r ./Site/bin/Release/netcoreapp2.1/publish/* /www/'
+                }
             }
         }
     }
