@@ -9,6 +9,9 @@ pipeline {
             }
         }
         stage('deploy') {
+            when {
+                branch 'master'
+            }
             steps {
                 echo 'Deploying site'
                 sh 'rm -r /www/'
