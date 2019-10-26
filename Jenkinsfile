@@ -7,7 +7,7 @@ pipeline {
                 dir ('top-level') {
                     withPythonEnv('/usr/pyenvs/nikola-env/') {
                         sh 'nikola theme -i bootstrap4'
-                        sh 'build'
+                        sh 'nikola build'
                     }
                     zip zipFile: 'top-level.zip', archive: false, dir: 'output'
                     archiveArtifacts artifacts: 'top-level.zip', fingerprint: true
