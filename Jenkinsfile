@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Building: top-level'
                 dir ('top-level') {
-                    withPythonEnv('/usr/pyenv/nikola-env/') {
+                    withPythonEnv('/usr/pyenvs/nikola-env/') {
                         sh 'nikola theme -i bootstrap4'
                         sh 'build'
                     }
