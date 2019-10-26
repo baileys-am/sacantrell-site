@@ -9,6 +9,7 @@ pipeline {
                         sh 'nikola theme -i bootstrap4'
                         sh 'nikola build'
                     }
+                    sh 'rm -f top-level.zip'
                     zip zipFile: 'top-level.zip', archive: false, dir: 'output'
                     archiveArtifacts artifacts: 'top-level.zip', fingerprint: true
                 }
@@ -20,6 +21,7 @@ pipeline {
                 dir('games') {
                     sh 'dotnet restore'
                     sh 'dotnet publish --configuration Release'
+                    sh 'rm -f games.zip'
                     zip zipFile: 'games.zip', archive: false, dir: 'Site/bin/Release/netcoreapp2.1/publish'
                     archiveArtifacts artifacts: 'games.zip', fingerprint: true
                 }
