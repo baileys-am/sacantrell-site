@@ -12,13 +12,13 @@ Install virtualenv using pip then create an environment for Nikola.
 
 ```bash
 virtualenv .env
-./.env/Scripts/activate
+source .env/bin/activate
 pip install --upgrade "Nikola[extras]"
 ```
 
 The site has been built and tested with the following environment versions:
 
-* Python 3.7.4
+* Python 3.7.3
 * pip 19.3.1
 * Nikola 8.0.2
 
