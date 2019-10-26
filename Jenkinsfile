@@ -5,11 +5,12 @@ pipeline {
             steps {
                 echo 'Building: top-level'
                 dir ('top-level') {
-                    withPythonEnv('python') {
-                        sh 'pip install --upgrade \"Nikola[extras]\"'
+                    withPythonEnv('/usr/pyenv/nikola-env/') {
                         sh 'nikola theme -i bootstrap4'
                         sh 'build'
                     }
+                    zip zipFile: 'top-level.zip', archive: false, dir: 'output'
+                    archiveArtifacts artifacts: 'top-level.zip', fingerprint: true
                 }
             }
         }
@@ -19,6 +20,8 @@ pipeline {
                 dir('games') {
                     sh 'dotnet restore'
                     sh 'dotnet publish --configuration Release'
+                    zip zipFile: 'games.zip', archive: false, dir: 'Site/bin/Release/netcoreapp2.1/publish'
+                    archiveArtifacts artifacts: 'games.zip', fingerprint: true
                 }
             }
         }
