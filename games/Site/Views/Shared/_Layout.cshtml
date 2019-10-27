@@ -2,113 +2,71 @@
 <html>
 <head>
     <style>
-        html {
-            min-width: 100%;
-            min-height: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            padding-left: 400px;
-            padding-right: 400px;
-            background-color: rgba(148, 153, 152, 0.582);
-        }
-
-        .layout-body {
+        .game-layout {
             width: 100%;
             height: 100%;
         }
 
-        .layout-page {
+        .game-layout > header {
             width: 100%;
-            height: 100%;
-            padding: 30px 30px;
-            color: black;
-            background-color: rgb(226, 245, 244);
-            -webkit-box-shadow: 0 0 4px 1px rgb(39, 37, 37);
-            -moz-box-shadow: 0 0 4px 1px rgb(39, 37, 37);
-            box-shadow: 0 0 4px 1px rgb(39, 37, 37);
-        }
-
-        .layout-page header {
-            padding-bottom: 60px;
-            display: flex;
-            justify-content: space-between;
             overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 4px;
+            background-color: rgb(54, 54, 54);
         }
 
-        .my-photo {
-            float: left;
-            align-self: flex-start;
+        .game-layout > header a {
+            color: whitesmoke;
         }
 
-        .my-photo img {
-            border-radius: 50%;
-        }
-
-        .nav {
-            width: 100%;
-            align-self: flex-end;
-            text-align: center;
-        }
-
-        .nav ul {
-            width: 100%;
-            display: table;
-            list-style-type: none;
-        }
-
-        .nav ul li {
-            display: table-cell;
-        }
-
-        .nav ul li a {
-            line-height: 0;
-            text-align: center;
-            font-size: 1.6rem;
-            color: black;
-        }
-
-        .nav ul li a:hover {
+        .game-layout > header a:hover {
             color: grey;
             text-decoration: none;
         }
 
-        .nav hr {
-            width: 90%;
-            margin-top: 0px;
-            margin-bottom: 50px;
-            color: grey;
+        .game-layout > header a span {
+            margin-left: 6px;
+            font-size: 20px;
         }
 
-        .ext-links {
+        .game-layout > header a span:hover {
+            color: inherit;
+            text-decoration: inherit;
         }
 
-        .ext-links ul {
-            display: table;
-            list-style-type: none;
-        }
-
-        .ext-links ul li {
-            display: table-cell;
-        }
-
-        .ext-links ul li a {
-            padding: 8px;
-            text-align: center;
-            color: black;
-        }
-
-        .ext-links ul li a:hover {
-            color: grey;
-            text-decoration: none;
-        }
-
-        .layout-content {
+        .game-content {
             width: 100%;
-            height: 100%;
+            top: 35px;
+            bottom: 25px;
+            left: 0;
+            position: absolute;
+            overflow: auto;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            background-color: rgb(54, 54, 54);
+        }
+
+        .game-layout > footer {
+            width: 100%;
+            height: 25px;
+            overflow: hidden;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            text-align: center;
+            background-color: rgb(54, 54, 54);
+        }
+
+        .game-layout > footer span {
+            margin: 5px;
+            font-size: 12px;
+            color: whitesmoke;
         }
     </style>
 
-    <title>Steven Cantrell</title>
+    <title>Steven Cantrell - It's game time!</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
@@ -117,40 +75,32 @@
         <link rel="stylesheet" href="~/dist/vendor.min.css" asp-append-version="true" />
     </environment>
 
-    <link rel="icon" type="image/png" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
+    <link rel="icon" type="image/png" href="~/favicon.ico" />
 
-<body class="layout-body">
-    <div class="layout-page">
-        <header>
-            <div class="my-photo">
-                <img src="/images/my-photo.jpg" alt="Steven Cantrell"></img>
-            </div>
-            <div class="nav">
-                <ul>
-                    <li><a href="Home">Home</a></li>
-                    <li><a href="Games">Games</a></li>
-                    <li><a href="About">About</a></li>
-                </ul>
-                <hr />
-            </div>
-            <div class="ext-links">
-                <ul>
-                    <li><a class="fa fa-github fa-2x" href="https://github.com/baileys-am"></a></li>
-                    <li><a class="fa fa-linkedin fa-2x" href="https://www.linkedin.com/in/steven-cantrell/"></a></li>
-                </ul>
-            </div>
-        </header>
-        <div class="layout-content">
-            @RenderBody()
-        </div>
-    </div>
+</head>
+<body>
     <environment include="Development">
         <script src="~/dist/vendor.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
-        <script src="~/dist/vendor.min.js" asp-append-version="true"></script>
+        <script src="~/dist/vendor.min.js",asp-append-version="true"></script>
     </environment>
+
+    <div class="game-layout">
+        <header>
+            <a href="http://www.sacantrell.net">
+                <span class="fa fa-arrow-left"></span>
+                <span>sacantrell.net</span>
+            </a>
+        </header>
+
+        <div class="game-content">
+            @RenderBody()
+        </div>
+
+        <footer>
+            <span>© Steven Cantrell</span>
+        </footer>
+    </div>
 </body>
 </html>
