@@ -138,7 +138,7 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/about.html", "About"),
+        ("/about", "About"),
         ("https://games.sacantrell.net", "Games"),
         ("/archive.html", "Blog Archive")
     ),
