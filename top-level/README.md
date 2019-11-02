@@ -41,3 +41,29 @@ To serve the site and test in browser (not for production):
 ```bash
 nikola serve -b
 ```
+
+## Adding to the site
+
+### New page
+
+To add a new page run the command:
+
+```bash
+nikola new_page
+```
+
+Then enter the following via prompt:
+
+* Title - Title of page
+
+### New blog post
+
+To add a new page run the command:
+
+```bash
+nikola new_post
+```
+
+Then enter the following via prompt:
+
+* Title - Title of post
